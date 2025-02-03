@@ -1,34 +1,108 @@
+/* General Styles */
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --header-bg: #333333;
+  --header-text: #ffffff;
+  --section-bg: #f9f9f9;
+  --section-border: #e0e0e0;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+  --button-hover-bg: #0056b3;
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --header-bg: #222222;
+  --header-text: #f0f0f0;
+  --section-bg: #2d2d2d;
+  --section-border: #444444;
+  --button-bg: #555555;
+  --button-text: #f0f0f0;
+  --button-hover-bg: #777777;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-  background: #333;
-  color: #fff;
+  background: var(--header-bg);
+  color: var(--header-text);
   padding: 20px 0;
   text-align: center;
 }
 
 header h1 {
   margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+}
+
+#theme-toggle {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+#theme-toggle:hover {
+  background: var(--button-hover-bg);
 }
 
 section {
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
-  background: #fff;
+  background: var(--section-bg);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--section-border);
 }
 
 h2 {
-  color: #333;
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.project-categories {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-btn {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.category-btn.active {
+  background: var(--button-hover-bg);
+}
+
+.category-btn:hover {
+  background: var(--button-hover-bg);
 }
 
 ul {
@@ -37,17 +111,28 @@ ul {
 }
 
 ul li {
-  background: #f4f4f4;
+  background: var(--section-bg);
   margin: 10px 0;
-  padding: 10px;
+  padding: 15px;
   border-radius: 4px;
+  border: 1px solid var(--section-border);
+}
+
+ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+ul li a:hover {
+  text-decoration: underline;
 }
 
 footer {
   text-align: center;
   padding: 10px;
-  background: #333;
-  color: #fff;
+  background: var(--header-bg);
+  color: var(--header-text);
   position: fixed;
   bottom: 0;
   width: 100%;
